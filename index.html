@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <main>
+        你的余额：<span id="amount">&&&amount&&&</span>
+
+        <button id="button">扣钱</button>
+    </main>
+    <script>
+        button.addEventListener=('click',(e)=>{
+        $.ajax({
+        url: "http://jack.com:8002/pay",
+        dataType: "jsonp",
+        success: function( response ) {
+        if(response === 'success'){
+        amount.innerText = amount.innerText - 1
+        }
+        }
+        })
+
+    </script>
+</body>
+</html>
